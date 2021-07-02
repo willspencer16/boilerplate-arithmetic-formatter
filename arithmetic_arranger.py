@@ -2,6 +2,7 @@ def arithmetic_arranger(problems):
     first_row = []
     arithmetic_operator = []
     second_row = []
+    dashes = []
 
     for x in problems:
         list = x.split()
@@ -21,12 +22,20 @@ def arithmetic_arranger(problems):
                 second_row.append(list[2])
             else:
                 return "Error: Numbers cannot be more than four digits."
+
+            if len(list[0]) <= len(list[2]):
+                dashes.append("-" * (len(list[2]) + 1))
+            else:
+                dashes.append("-" * (len(list[0]) + 1))
+
+
+
         else:
             return "Error: Too many problems."
     
     arranged_problems = f"   {first_row[0]}      {first_row[1]}      {first_row[2]}      {first_row[3]}\n"\
                         f"{arithmetic_operator[0]} {second_row[0]}    {arithmetic_operator[1]}    {second_row[1]}"\
                         f"    {arithmetic_operator[2]} {second_row[2]}    {arithmetic_operator[3]}  {second_row[3]}\n"\
-                        f"-----    ------    ----    -----"
+                        f"{dashes[0]}    {dashes[1]}    {dashes[2]}    {dashes[3]}"
     
     return arranged_problems
