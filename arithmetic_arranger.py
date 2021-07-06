@@ -1,7 +1,8 @@
-def arithmetic_arranger(problems):
+def arithmetic_arranger(problems, display=False):
     first_row = []
     second_row = []
     dashes = []
+    answers = []
 
     if len(problems) > 5:
         return "Error: Too many problems."
@@ -44,7 +45,20 @@ def arithmetic_arranger(problems):
         else:
             dashes.append("-" * (len(list[0]) + 2))
             dashes.append("    ")
-    
-    arranged_problems = ''.join(first_row) + "\n" + ''.join(second_row) + "\n" + ''.join(dashes)
+        
+        if len(list[0]) <= len(list[2]):
+            answers.append(" " * ((len(list[2]) + 2) - len(str(eval(problems[problem])))))
+            answers.append(str(eval(problems[problem])))
+            answers.append("    ")
+        else:
+            answers.append(" " * ((len(list[0]) + 2) - len(str(eval(problems[problem])))))
+            answers.append(str(eval(problems[problem])))
+            answers.append("    ")
+
+    if display == True:
+        arranged_problems = ''.join(first_row) + "\n" + ''.join(second_row) + "\n" + ''.join(dashes) + "\n" + ''.join(answers)
+    else:
+        arranged_problems = ''.join(first_row) + "\n" + ''.join(second_row) + "\n" + ''.join(dashes)
+            
 
     return arranged_problems
