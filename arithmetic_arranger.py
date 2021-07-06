@@ -10,6 +10,11 @@ def arithmetic_arranger(problems, display=False):
     for problem in range(len(problems)):
         list = problems[problem].split()
 
+        if not list[0].isdigit():
+            return "Error: Numbers must only contain digits."
+        elif not list[2].isdigit():
+            return "Error: Numbers must only contain digits."
+
         if len(list[0]) < 5:
             if len(list[0]) >= len(list[2]):
                 first_row.append("  ")
@@ -54,6 +59,11 @@ def arithmetic_arranger(problems, display=False):
             answers.append(" " * ((len(list[0]) + 2) - len(str(eval(problems[problem])))))
             answers.append(str(eval(problems[problem])))
             answers.append("    ")
+    
+    first_row = first_row[:-1]
+    second_row = second_row[:-1]
+    dashes = dashes[:-1]
+    answers = answers[:-1]
 
     if display == True:
         arranged_problems = ''.join(first_row) + "\n" + ''.join(second_row) + "\n" + ''.join(dashes) + "\n" + ''.join(answers)
