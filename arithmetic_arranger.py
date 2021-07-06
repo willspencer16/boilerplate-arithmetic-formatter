@@ -52,9 +52,9 @@ def arithmetic_arranger(problems):
         else:
             return "Error: Too many problems."
     
-    arranged_problems = f"{space[1]}{first_row[0]}{space[0]}{space[2]}{first_row[1]}{space[0]}{space[3]}{first_row[2]}{space[0]}{space[4]}{first_row[3]}\n"\
-                        f"{arithmetic_operator[0]}{space[5]}{second_row[0]}{space[0]}{arithmetic_operator[1]}{space[6]}{second_row[1]}"\
-                        f"{space[0]}{arithmetic_operator[2]}{space[7]}{second_row[2]}{space[0]}{arithmetic_operator[3]}{space[8]}{second_row[3]}\n"\
-                        f"{dashes[0]}{space[0]}{dashes[1]}{space[0]}{dashes[2]}{space[0]}{dashes[3]}"
-    
+    arranged_problems = f"{first_row[0]:>5}{first_row[1]:>10}{first_row[2]:>8}{first_row[3]:>9}\n"\
+                        f"{arithmetic_operator[0]}{second_row[0]:>4}{arithmetic_operator[1]:>5}{second_row[1]:>5}"\
+                        f"{arithmetic_operator[2]:>5}{second_row[2]:>3}{arithmetic_operator[3]:>5}{second_row[3]:>4}\n"\
+                        f"{dashes[0]}    {dashes[1]}    {dashes[2]}    {dashes[3]}"
+
     return arranged_problems
