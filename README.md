@@ -1,3 +1,7 @@
+## Arithmetic Formatter
+
+A Python project as part of ``Scientific Computing with Python Certification`` by ``freeCodeCamp.org``.
+
 ### Assignment
 
 Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
